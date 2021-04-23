@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head th:fragment="site-head">
+    <meta charset="UTF-8">
+    <title>ST3-Mini Project</title>
+</head>
+<body>
+
+<div id="parent">
+    <h2 id="heading" align="center" >Details form</h2>
+
+<div id="view">
+    <hr>
+    <form method="post" th:object="${dataList}" th:action="@{/create}">
+    <table align="center">
+        <tr>
+        <td><label for="Name">Name:</label></td>
+        <td><input type="text" id="Name" name="name" minlength="3"></td>
+        </tr>
+        <tr>
+            <td> <label for="mob_no">Mob.no:</label></td>
+            <td><input type="text" id="mob_no" name="mobileNumber" minlength="10"></td>
+        </tr>
+        <tr>
+            <td><label for="mail">Email Id:</label></td>
+            <td><input type="email" id="mail" name="mail"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2" align="center"> <input type="submit" value="Submit" th:onclick="@{/create}" th:method="post"></td>
+        </tr>
+    </table></form>
+</div>
+<hr>
+<div id="result_div">
+    <table id="result_table" align="center" >
+        <tr>
+            <td>Name:</td>
+            <td>Mob No:</td>
+            <td>Email:</td>
+        </tr>
+            <main id="datalist" >
+                <dataList th:each="p : ${datalist}" th:method="get">
+                    <tr>
+                    <td><p th:text="${p.name}"></p></td>
+                    <td><p th:text="${p.mobileNumber}"></p></td>
+                    <td><p th:text="${p.mail}"></p></td>
+                    <td><form th:action="@{/delete(postId=${p.id})}" th:method="delete">
+                        <input type="submit" value="DELETE" />
+                    </form></td>
+                    </tr>
+        </dataList>
+            </main>
+    </table>
+</div>
+</div>
+</body>
+</html>
