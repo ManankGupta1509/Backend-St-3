@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
-<head th:fragment="site-head">
+<head>
     <meta charset="UTF-8">
     <title>ST3-Mini Project</title>
 </head>
 <body>
-
+<header th:replace="layout1 :: logged-in"></header>
 <div id="parent">
     <h2 id="heading" align="center" >Details form</h2>
 
 <div id="view">
-    <hr>
+    <hr style="background-color: green; border:1px solid green; width: 45%;">
     <form method="post" th:object="${dataList}" th:action="@{/create}">
-    <table align="center">
+    <table align="center" style="background-color: burlywood; padding: 70px; border-radius: 5px">
         <tr>
-        <td><label for="Name">Name:</label></td>
-        <td><input type="text" id="Name" name="name" minlength="3"></td>
+        <td><label for="Name"><h3>Name: </h3></label></td>
+        <td><input type="text" id="Name" name="name" minlength="3" style="border:0px;border-bottom: 2px solid black;border-radius:2px;background-color: white; font-size: 16px; padding: 5px; "></td>
         </tr>
         <tr>
-            <td> <label for="mob_no">Mob.no:</label></td>
-            <td><input type="text" id="mob_no" name="mobileNumber" minlength="10"></td>
+            <td> <label for="mob_no"><h3>Mob. no.: </h3></label></td>
+            <td><input type="text" id="mob_no" name="mobileNumber" minlength="10" style="border:0px;border-bottom: 2px solid black;border-radius:2px;background-color: white; font-size: 16px; padding: 5px; "></td>
         </tr>
         <tr>
-            <td><label for="mail">Email Id:</label></td>
-            <td><input type="email" id="mail" name="mail"></td>
+            <td><label for="mail"><h3>Email Id: </h3></label></td>
+            <td><input type="email" id="mail" name="mail" style="border:0px;border-bottom: 2px solid black;border-radius:2px;background-color: white; font-size: 16px; padding: 5px; "></td>
 
         </tr>
         <tr>
-            <td colspan="2" align="center"> <input type="submit" value="Submit" th:onclick="@{/create}" th:method="post"></td>
+            <td colspan="2" align="center"> <input type="submit" value="Submit" th:onclick="@{/create}" th:method="post" style="background-color: green;border: 0px;border-radius: 5px;padding: 20px;font-size: 16px; color: aliceblue"></td>
         </tr>
     </table></form>
 </div>
 <hr>
 <div id="result_div">
-    <table id="result_table" align="center" >
+    <table id="result_table" align="center" style="background-color: cornflowerblue; padding: 15px; font-size: 22px" >
         <tr>
-            <td>Name:</td>
-            <td>Mob No:</td>
-            <td>Email:</td>
+            <td style="padding: 10px;">Name:</td>
+            <td style="padding: 10px;">Mob No:</td>
+            <td style="padding: 10px;">Email:</td>
         </tr>
             <main id="datalist" >
                 <dataList th:each="p : ${datalist}" th:method="get">
                     <tr>
-                    <td><p th:text="${p.name}"></p></td>
-                    <td><p th:text="${p.mobileNumber}"></p></td>
-                    <td><p th:text="${p.mail}"></p></td>
-                    <td><form th:action="@{/delete(postId=${p.id})}" th:method="delete">
-                        <input type="submit" value="DELETE" />
+                    <td style="padding: 10px;"><p th:text="${p.name}"></p></td>
+                    <td style="padding: 10px;"><p th:text="${p.mobileNumber}"></p></td>
+                    <td style="padding: 10px;"><p th:text="${p.mail}"></p></td>
+                    <td style="padding: 10px;"><form th:action="@{/delete(postId=${p.id})}" th:method="delete">
+                        <input type="submit" value="DELETE" style="background-color: orange;border: 0px;border-radius: 5px;padding: 20px;font-size: 16px; color: black "/>
                     </form></td>
                     </tr>
         </dataList>

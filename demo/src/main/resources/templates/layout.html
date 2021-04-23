@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
 
-<head th:fragment="site-head"></head>
+<head th:fragment="site-head">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
 
-<body>
-    <header th:fragment="logged-out" th:remove="tag">
-        <header align="center">
-            <a href="users/login.html" th:href="@{/users/login}"><h2>Login</h2></a>
-            <a href="users/register.html" th:href="@{/users/registration}"><h2>Register</h2></a><br<br>
+<body style="background-color: aquamarine">
+    <header th:fragment="logged-out" th:remove="tag" >
+        <header align="center" style="overflow: hidden;background-color: black;padding: 7px 6px;border-radius: 5px">
+            <i class="material-icons" style="font-size:36px;color: white;float:left;">book</i>
+            <h2 style="color: white;float:left;">Phone Directory</h2>
+            <a href="users/login.html" th:href="@{/users/login}" style="float: right; color: white; text-decoration: none; text-align: center; padding: 6px; cursor: pointer;"><h3>Login</h3></a>
+            <a href="users/register.html" th:href="@{/users/registration}"style="float: right; color: white;text-decoration: none;  text-align: center; padding: 6px; cursor: pointer;"><h3>Register</h3></a>
         </header>
     </header>
+    <br><br>
+    <div align="center"><h1 style="color: purple" align="center">Welcome To The Contact List</h1>
+        <span align="center"> <i class="material-icons" style="font-size:520px;color: purple; text-align: center;" align="center">book</i></span>
+    </div>
 
-    <header th:fragment="logged-in" th:remove="tag">
-        <header align="center">
-            <a href="users/login.html" th:href="@{/users/login}">Add Contact</a>
-            <form method="post" th:action="@{/users/logout}">
-                <input type="submit" value="Logout" />
-            </form>
-        </header>
-    </header>
 </body>
 
 </html>

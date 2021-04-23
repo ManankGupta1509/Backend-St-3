@@ -58,6 +58,6 @@ public class UserController {
     public String userLogout(HttpSession session)
     {
         session.invalidate();
-        return "redirect:/index";
+        return "redirect:/";
     }
 }

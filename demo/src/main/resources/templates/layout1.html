@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head th:fragment="site-head">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<header th:fragment="logged-in" th:remove="tag">
+    <header align="center" style="overflow: hidden;background-color: black;padding: 7px 6px;border-radius: 5px">
+        <i class="fa fa-address-book-o" style="font-size:36px; color: white; float:left"></i>
+        <h2 style="color: white;float:left ">Phone Directory</h2>
+        <form method="post" th:action="@{/users/logout}" align="center">
+            <input align = "center" type="submit" value="Logout" style="float: right; color: white; background-color: black; border: 0px;font-size: 16px; padding: 6px; cursor: pointer;margin-top: 10px;">
+        </form>
+    </header>
+</header>
+</body>
+</html>

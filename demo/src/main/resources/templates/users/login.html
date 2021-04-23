@@ -8,14 +8,14 @@
 
 <header th:replace="layout :: logged-out"></header>
 
-<h2 align="center">Please Login:</h2>
-
+<h1 align="center" style="color: blue">Please Login:</h1>
+<hr style="background-color: green; border:1px solid green; width: 30%;">
 <form method="post" th:object="${user}" th:action="@{/users/login}" align="center">
-    <label for="username">Username:</label>
-    <input type="text" th:field="*{username}" id="username" />
-    <label for="password">Password:</label>
-    <input type="password" th:field="*{password}" id="password" />
-    <input type="submit" value="Login" />
+    <h2><label for="username">Username:</label></h2>
+    <input type="text" th:field="*{username}" id="username" style="border:0px;border-bottom: 2px solid black;border-radius:2px;background-color: white; font-size: 16px; padding: 5px; "/><br>
+    <h2><label for="password">Password:</label></h2>
+    <input type="password" th:field="*{password}" id="password" style="border:0px;border-bottom: 2px solid black;border-radius:2px; background-color: white;font-size: 16px; padding: 5px;"/><br><br>
+    <input type="submit" value="Login" style="background-color: green;border: 0px;border-radius: 5px;padding: 20px;font-size: 16px; color: aliceblue" />
 </form>
 
 </html>

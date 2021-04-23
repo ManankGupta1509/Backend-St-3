@@ -8,25 +8,30 @@
 
 <header th:replace="layout :: logged-out"></header>
 
-<h2 align="center">Please Register:</h2>
-
+<h1 align="center" style="color: blue">Please Register:</h1>
+<hr style="background-color: green; border:1px solid green; width: 30%;">
 <form method="post" th:object="${user}" th:action="@{/users/registration}" align="center">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" th:field="${user.username}" /><br>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" th:field="${user.password}" /><br>
-    <label for="fullname">Full Name:</label>
-    <input type="text" id="fullname" name="fullName" th:field="${user.userProfile.fullName}" /><br>
-    <label for="gender">Gender:</label>
-    <input type="text" id="gender" name="gender" th:field="${user.userProfile.gender}" /><br>
-    <label for="mobileNumber">Mobile Number:</label>
-    <input type="text" id="mobileNumber" name="mobileNumber" th:field="${user.userProfile.mobileNumber}" /><br>
-    <label for="email">Email:</label>
-    <input type="text" id="email" name="email" th:field="${user.userProfile.email}" /><br>
-    <label for="address">Address:</label>
-    <input type="text" id="address" name="address" th:field="${user.userProfile.address}" /><br>
-    <input type="submit" value="Register" />
+    <table align="center" border="0px">
+        <tr><td><label for="username"><h2>Username:</h2></label></td>
+            <td><input type="text" id="username" name="username" th:field="${user.username}"style="border:0px;border-bottom: 2px solid black;border-radius:2px;background-color: white; font-size: 16px; padding: 5px; " /></td></tr>
+    <tr><td> <label for="password"><h2>Password:</h2></label></td>
+        <td><input type="password" id="password" name="password" th:field="${user.password}"style="border:0px;border-bottom: 2px solid black;border-radius:2px;background-color: white; font-size: 16px; padding: 5px; " /></td></tr>
+        <tr><td><label for="fullname"><h2>Full Name:</h2></label></td>
+        <td><input type="text" id="fullname" name="fullName" th:field="${user.userProfile.fullName}" style="border:0px;border-bottom: 2px solid black;border-radius:2px;background-color: white; font-size: 16px; padding: 5px; "/></td></tr>
+    <tr><td><label for="gender"><h2>Gender:</h2></label></td>
+        <td><input type="text" id="gender" name="gender" th:field="${user.userProfile.gender}" style="border:0px;border-bottom: 2px solid black;border-radius:2px;background-color: white; font-size: 16px; padding: 5px; " /></td></tr>
+    <tr> <td><label for="mobileNumber"><h2>Mobile Number:</h2></label></td>
+        <td><input type="text" id="mobileNumber" name="mobileNumber" th:field="${user.userProfile.mobileNumber}" style="border:0px;border-bottom: 2px solid black;border-radius:2px;background-color: white; font-size: 16px; padding: 5px; " /></td></tr>
+   <tr>
+    <td><label for="email"><h2>Email:</h2></label></td>
+    <td><input type="text" id="email" name="email" th:field="${user.userProfile.email}"  style="border:0px;border-bottom: 2px solid black;border-radius:2px;background-color: white; font-size: 16px; padding: 5px; "/></td></tr>
 
+        <tr> <td><label for="address"><h2>Address:</h2></label></td>
+            <td><input type="text" id="address" name="address" th:field="${user.userProfile.address}" style="border:0px;border-bottom: 2px solid black;border-radius:2px;background-color: white; font-size: 16px; padding: 5px; " /></td></tr>
+   <br>
+
+    </table>
+    <input type="submit" value="Register"  style="background-color: green;border: 0px;border-radius: 5px;padding: 20px;font-size: 16px; color: aliceblue"/>
 </form>
 
 </html>
