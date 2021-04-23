@@ -7,9 +7,9 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/dataproject"/>
-            <property name="javax.persistence.jdbc.user" value="postgres"/>
-            <property name="javax.persistence.jdbc.password" value="manank@15"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgres://tgvxpqzqykgxcr:d037ef9de47dadc0c90165d80366dff261af1eb337f08d56bbd04b1f4b0c9560@ec2-3-217-219-146.compute-1.amazonaws.com:5432/dc1ccvlvcq4pr5"/>
+            <property name="javax.persistence.jdbc.user" value="tgvxpqzqykgxcr"/>
+            <property name="javax.persistence.jdbc.password" value="d037ef9de47dadc0c90165d80366dff261af1eb337f08d56bbd04b1f4b0c9560"/>
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL82Dialect"/>
             <property name="hibernate.temp.use_jdbc_metadata.defaults" value="false"/>
